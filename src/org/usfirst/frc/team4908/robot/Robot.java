@@ -107,14 +107,16 @@ public class Robot extends IterativeRobot
     /**
      * This function is called periodically during operator control
      */
-    public void teleopPeriodic() {
+    public void teleopPeriodic() 
+    {
         Scheduler.getInstance().run();
     }
     
     /**
      * This function is called periodically during test mode
      */
-    public void testPeriodic() {
+    public void testPeriodic() 
+    {
         LiveWindow.run();
     }
 }
