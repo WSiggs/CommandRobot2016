@@ -26,7 +26,10 @@ public class ShootOverTop extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	Intake.runIntakeMotor(OI.operatorController.getRightTrigger());
+    	if(OI.operatorController.getRightTrigger() > 0.1)
+    		Intake.runIntakeMotor(OI.operatorController.getRightTrigger());
+    	else
+    		Intake.runIntakeMotor(0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
