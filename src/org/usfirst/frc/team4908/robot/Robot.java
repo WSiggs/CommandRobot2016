@@ -6,9 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.usfirst.frc.team4908.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4908.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team4908.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team4908.robot.subsystems.Intake;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -23,6 +21,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot 
 {
+    RobotMap map = new RobotMap();
 
 	public static final DriveTrain driveTrain = new DriveTrain();
 	public static final Intake intake = new Intake();
@@ -42,6 +41,7 @@ public class Robot extends IterativeRobot
         //chooser.addDefault("Default Auto", new ExampleCommand());
         //chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+        map.updatePorts();
     }
 	
 	/**
