@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Intake extends Subsystem 
-{
+{\
 	private static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(RobotMap.ports[RobotMap.INTAKE_SOLENOID_PORT_ONE],
                                                                       RobotMap.ports[RobotMap.INTAKE_SOLENOID_PORT_TWO]);
 
