@@ -42,7 +42,7 @@ public class RobotMap
 		try
 		{
 			file = new File("Ports.txt");
-			Scanner readFile = new Scanner(file);
+			Scanner readFile = new Scanner(file).useDelimiter("\n");
 			int count = 0;
 
 			while (readFile.hasNext())
