@@ -13,21 +13,21 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Intake extends Subsystem 
 {
-	private static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(RobotMap.ports[RobotMap.INTAKE_SOLENOID_PORT_ONE],
-                                                                      RobotMap.ports[RobotMap.INTAKE_SOLENOID_PORT_TWO]);
+	private static DoubleSolenoid intakeSolenoid = new DoubleSolenoid(RobotMap.INTAKE_SOLENOID_PORT_ONE,
+                                                                      RobotMap.INTAKE_SOLENOID_PORT_TWO);
 
-	private static SpeedController intakeMotor = new TalonSRX(RobotMap.ports[RobotMap.INTAKE_MOTOR_PORT]);
+	private static SpeedController intakeMotor = new TalonSRX(RobotMap.INTAKE_MOTOR_PORT);
 	
     public void initDefaultCommand() { setDefaultCommand(new ShootOverTop()); }
     
     public static void deployIntake()
     {
-    	intakeSolenoid.set(DoubleSolenoid.Value.kForward);
+    	intakeSolenoid.set(DoubleSolenoid.Value.kReverse);
     }
     
     public static void retractIntake()
     {
-    	intakeSolenoid.set(DoubleSolenoid.Value.kReverse);
+    	intakeSolenoid.set(DoubleSolenoid.Value.kForward);
     }
     
     public static void cancel()
@@ -47,7 +47,7 @@ public class Intake extends Subsystem
     
     public static void stopAll()
     {
-    	intakeMotor.set(0);
+    	stopMotor();
     	intakeSolenoid.set(DoubleSolenoid.Value.kOff);
     }
 }

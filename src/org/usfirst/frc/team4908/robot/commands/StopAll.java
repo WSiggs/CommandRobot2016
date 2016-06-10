@@ -1,18 +1,20 @@
 package org.usfirst.frc.team4908.robot.commands;
 
 import org.usfirst.frc.team4908.robot.Robot;
+import org.usfirst.frc.team4908.robot.subsystems.Intake;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class DriveWithJoystick extends Command {
+public class StopAll extends Command {
 
-    public DriveWithJoystick() {
+    public StopAll() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-    	requires(Robot.driveTrain);
+    	
+    	requires(Robot.intake);
     }
 
     // Called just before this Command runs the first time
@@ -20,7 +22,10 @@ public class DriveWithJoystick extends Command {
     }
 
     // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
+    protected void execute() 
+    {
+    	Intake.retractIntake();
+    	Intake.stopMotor();
     }
 
     // Make this return true when this Command no longer needs to run execute()

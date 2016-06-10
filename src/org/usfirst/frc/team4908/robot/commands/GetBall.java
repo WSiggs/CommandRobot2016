@@ -20,12 +20,16 @@ public class GetBall extends Command {
     protected void initialize() 
     {
     	Intake.deployIntake(); // placed in here so it isn't constantly firing
+    
+    	System.out.println("INIT");
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
     	Intake.runIntakeMotor(0.5);
+    	System.out.println("RUN");
+
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -37,7 +41,11 @@ public class GetBall extends Command {
     // Called once after isFinished returns true
     protected void end() 
     {
+    	Intake.retractIntake();
     	Intake.stopAll();
+    	
+    	System.out.println("DONE");
+
     }
 
     // Called when another command which requires one or more of the same
