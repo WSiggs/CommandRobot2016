@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * @author Billy
  */
 public class Intake extends Subsystem 
 {
@@ -18,19 +18,22 @@ public class Intake extends Subsystem
 
 	private static SpeedController intakeMotor = new TalonSRX(RobotMap.ports[RobotMap.INTAKE_MOTOR_PORT]);
 	
-    public void initDefaultCommand() { setDefaultCommand(new ShootOverTop()); }
-    
-    public static void deployIntake()
+    public void initDefaultCommand()
     {
-    	intakeSolenoid.set(DoubleSolenoid.Value.kForward);
+        setDefaultCommand(new ShootOverTop());
     }
     
-    public static void retractIntake()
+    public static void deployIntake()
     {
     	intakeSolenoid.set(DoubleSolenoid.Value.kReverse);
     }
     
-    public static void cancel()
+    public static void retractIntake()
+    {
+    	intakeSolenoid.set(DoubleSolenoid.Value.kForward);
+    }
+    
+    public static void cancel() // only called in emergency
     {
     	intakeSolenoid.set(DoubleSolenoid.Value.kOff);
     }
@@ -47,7 +50,7 @@ public class Intake extends Subsystem
     
     public static void stopAll()
     {
-    	intakeMotor.set(0);
+    	stopMotor();
     	intakeSolenoid.set(DoubleSolenoid.Value.kOff);
     }
 }

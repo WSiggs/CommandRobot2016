@@ -23,14 +23,17 @@ public class RobotMap
 	public static final int MOTOR_FRONT_RIGHT = 1;
 	public static final int MOTOR_BACK_LEFT = 2;
 	public static final int MOTOR_BACK_RIGHT = 3;
-	public static final int DRIVER_PORT = 4;
-	public static final int OPERATOR_PORT = 5;
-	public static final int INTAKE_SOLENOID_PORT_ONE = 6;
-	public static final int INTAKE_SOLENOID_PORT_TWO = 7;
-	public static final int INTAKE_MOTOR_PORT = 8;
-	public static final int LIMIT_SWITCH_PORT = 9;
+	public static final int DRIVER_PORT_FB = 4;
+	public static final int DRIVER_PORT_RL = 5;
+	public static final int OPERATOR_PORT = 6;
+	public static final int INTAKE_SOLENOID_PORT_ONE = 7;
+	public static final int INTAKE_SOLENOID_PORT_TWO = 8;
+	public static final int INTAKE_MOTOR_PORT = 9;
+	public static final int LIMIT_SWITCH_PORT = 10;
+	public static final int LEFT_ARM_PORT = 11;
+	public static final int RIGHT_ARM_PORT = 12;
 
-	public static int[] ports = new int[10];
+	public static int[] ports = new int[13];
 
 	File file;
 

@@ -5,7 +5,7 @@ import org.usfirst.frc.team4908.robot.OI;
 import edu.wpi.first.wpilibj.buttons.Trigger;
 
 /**
- *
+ * @author Billy
  */
 public class XBoxTrigger extends Trigger 
 {

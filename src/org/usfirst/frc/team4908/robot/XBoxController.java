@@ -47,41 +47,49 @@ public class XBoxController extends Joystick
 
 	// axis values
 	public double getRightTrigger() { return getRawAxis(RIGHT_TRIGGER); }
-	
-	public double getLeftTrigger() { return getRawAxis(LEFT_TRIGGER); }
-	
-	public double getLeftX() { return getRawAxis(LEFT_STICK_X); }
-	
-	public double getLeftY() { return getRawAxis(LEFT_STICK_Y); }
-	
-	public double getRightX() { return getRawAxis(RIGHT_STICK_X); }
-	
-	public double getRightY() { return getRawAxis(RIGHT_STICK_Y); }
-	
-	// button values
-	public boolean getButtonA() { return getRawButton(BUTTON_A); }
-	
-	public boolean getButtonB() { return getRawButton(BUTTON_B); }
-	
 	public boolean getButtonX() { return getRawButton(BUTTON_X); }
 
-	public boolean getButtonY() { return getRawButton(BUTTON_Y); }
+	//region unused methods
+
+	//public double getLeftTrigger() { return getRawAxis(LEFT_TRIGGER); }
 	
-	public boolean getRightButton() { return getRawButton(BUTTON_RIGHT_BUMPER); } 
+	//public double getLeftX() { return getRawAxis(LEFT_STICK_X); }
 	
-	public boolean getLeftButton() { return getRawButton(BUTTON_LEFT_BUMPER); } 
+	//public double getLeftY() { return getRawAxis(LEFT_STICK_Y); }
 	
+	//public double getRightX() { return getRawAxis(RIGHT_STICK_X); }
+	
+	//public double getRightY() { return getRawAxis(RIGHT_STICK_Y); }
+	
+	//button values
+	//public boolean getButtonA() { return getRawButton(BUTTON_A); }
+	
+	//public boolean getButtonB() { return getRawButton(BUTTON_B); }
+
+	//public boolean getButtonY() { return getRawButton(BUTTON_Y); }
+
+	//public boolean getRightButton() { return getRawButton(BUTTON_RIGHT_BUMPER); }
+
+	//public boolean getLeftButton() { return getRawButton(BUTTON_LEFT_BUMPER); }
+
+	//endregion
+
+
+
 	// button access
 	public Button getAButton() { return buttonA; }
-
-	public Button getBButton() { return buttonB; }
-
-	public Button getXButton() { return buttonX; }
-
 	public Button getYButton() { return buttonY; }
 
-	public Button getButtonLeft() { return buttonLeftBumper; }
+	//region unused methods
 
-	public Button getButtonRight() { return buttonRightBumper; }
+	//public Button getButtonLeft() { return buttonLeftBumper; }
+
+	//public Button getButtonRight() { return buttonRightBumper; }
+
+	//public Button getBButton() { return buttonB; }
+
+	//public Button getXButton() { return buttonX; }
+
+	//endregion
 
 }

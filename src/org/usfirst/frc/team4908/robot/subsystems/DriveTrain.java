@@ -1,5 +1,6 @@
 package org.usfirst.frc.team4908.robot.subsystems;
 
+import edu.wpi.first.wpilibj.CANTalon;
 import org.usfirst.frc.team4908.robot.RobotMap;
 import org.usfirst.frc.team4908.robot.commands.DriveWithJoystick;
 
@@ -8,16 +9,19 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
- *
+ * @author James Cip
  */
 public class DriveTrain extends Subsystem 
 {
+    RobotDrive drive;
 
-	private static Talon frontLeft = new Talon(RobotMap.ports[RobotMap.MOTOR_FRONT_LEFT]);
-	private static Talon frontRight = new Talon(RobotMap.ports[RobotMap.MOTOR_FRONT_RIGHT]);
-	private static Talon backLeft = new Talon(RobotMap.ports[RobotMap.MOTOR_BACK_LEFT]);
-	private static Talon backRight = new Talon(RobotMap.ports[RobotMap.MOTOR_BACK_RIGHT]);
-    public static RobotDrive drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
+    public DriveTrain()
+    {
+        drive = new RobotDrive(new CANTalon(RobotMap.ports[RobotMap.MOTOR_FRONT_LEFT]),
+                new CANTalon(RobotMap.ports[RobotMap.MOTOR_BACK_LEFT]),
+                new CANTalon(RobotMap.ports[RobotMap.MOTOR_FRONT_RIGHT]),
+                new CANTalon(RobotMap.ports[RobotMap.MOTOR_BACK_RIGHT]));
+    }
 	
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -28,9 +32,18 @@ public class DriveTrain extends Subsystem
         setDefaultCommand(new DriveWithJoystick());
     }
     
-    public static void drive(double x, double rotation)
+    public void drive(double x, double rotation)
     {	
-    	drive.arcadeDrive(x, rotation);
+    	if (x < 0) // calculating exponential values
+        {
+            x = -Math.pow(x, 2);
+        }
+        else if (x > 0)
+        {
+            x = Math.pow(x, 2);
+        }
+
+        drive.arcadeDrive(x, rotation, false);
     }
 }
 

@@ -8,30 +8,28 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * @author James Cip
  */
-public class DriveWithJoystick extends Command {
+public class DriveWithJoystick extends Command
+{
 
-	private double x;
-	private double rotation;
 	
-    public DriveWithJoystick() {
+    public DriveWithJoystick()
+    {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.driveTrain);
     }
 
     // Called just before this Command runs the first time
-    protected void initialize() {
+    protected void initialize()
+    {
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	x = OI.driverStick.getAxis(Joystick.AxisType.kY);
-    	rotation = OI.driverStick.getAxis(Joystick.AxisType.kTwist);
-    	
-    	DriveTrain.drive(x, rotation);
+    	Robot.driveTrain.drive(-OI.driverStickFB.getRawAxis(1), - OI.driverStickRL.getRawAxis(2));
     }
 
     // Make this return true when this Command no longer needs to run execute()

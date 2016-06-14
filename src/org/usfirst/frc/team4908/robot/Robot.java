@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team4908.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4908.robot.subsystems.Intake;
+import org.usfirst.frc.team4908.robot.subsystems.Arm;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -25,6 +26,7 @@ public class Robot extends IterativeRobot
 
 	public static final DriveTrain driveTrain = new DriveTrain();
 	public static final Intake intake = new Intake();
+    public static final Arm arm = new Arm();
 	public static OI oi;
 
     Command autonomousCommand;
